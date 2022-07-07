@@ -1,4 +1,16 @@
-function hasTargetSum(array, target) {
+function hasTargetSum(array, target) { 
+  for(let i=0; i <= array.length; i++){
+    
+    for (let j= i+1; j <= array.length; j++){
+     
+      if (array[i] + array[j] === target){
+      return true
+      }
+      
+      
+    }
+  }
+  return false
   // Write your algorithm here
 }
 
@@ -8,10 +20,19 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+  Given the array we need to grab the first value, and iteratively add it to each
+  successive value. 
+  As we iterate we compare the sum of value one and two to the expected
+  'target' value.
+  If we hit the sum we stop and return true
+  If not we iterate by grabbing the 2nd, 3rd, etc. value and iterate again through the array.
+  return false if no combinations result in the answer.
 */
 
 /*
   Add written explanation of your solution here
+  We are looking to add every digit together, essentially an additive factorial
+  and find a sum. We will need to iterate through the array multiple times
 */
 
 // You can run `node index.js` to view these console logs
